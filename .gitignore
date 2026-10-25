@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# customer orders (personal data, never commit)
+/data/
+
+!.env.example
