@@ -81,6 +81,7 @@ export function CheckoutModal() {
           state: !f.state || f.state === autoFilled.current.state ? body.state : f.state,
         }));
         autoFilled.current = { city: body.city, state: body.state };
+        setErrors((e) => ({ ...e, city: undefined, state: undefined }));
       })
       .catch((err) => {
         if (err.name !== "AbortError")
@@ -314,7 +315,7 @@ function PaymentOption({ checked, onSelect, icon, title, detail, tag }: {
 }) {
   return (
     <label
-      className={`flex w-full cursor-pointer items-center gap-3.5 rounded-2xl border-2 bg-white px-4 py-3.5 transition-colors has-focus-visible:outline-3 has-focus-visible:outline-rose ${checked ? "border-ink" : "border-mist hover:border-ink-soft/40"}`}
+      className={`relative flex w-full cursor-pointer items-center gap-3.5 rounded-2xl border-2 bg-white px-4 py-3.5 transition-colors has-focus-visible:outline-3 has-focus-visible:outline-rose ${checked ? "border-ink" : "border-mist hover:border-ink-soft/40"}`}
     >
       <input type="radio" name="payment" checked={checked} onChange={onSelect} className="sr-only" />
       <span className={`grid size-10 shrink-0 place-items-center rounded-full ${checked ? "bg-ink text-white" : "bg-blush text-ink"}`}>{icon}</span>

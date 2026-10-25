@@ -7,7 +7,7 @@ const photos = [
   { src: "/images/pod-night-drive.jpg", alt: "Aero pod on a car armrest at night", position: "50% 30%" },
   { src: "/images/pod-cup-holder.jpg", alt: "Aero pod in a car cup holder", position: "50% 60%" },
   { src: "/images/pod-studio.jpg", alt: "Aero pod on a white background", position: "50% 50%", contain: true },
-  { src: "/images/pod-poster.jpg", alt: "Aero pod with rose petals: long-lasting fragrance, soft hygienic tissues", position: "50% 45%" },
+  { src: "/images/pod-poster.jpg", alt: "Aero pod with rose petals: long-lasting fragrance, soft hygienic tissues", position: "50% 50%", contain: true },
 ];
 
 export function Gallery() {

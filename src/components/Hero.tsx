@@ -16,27 +16,22 @@ const promises = [
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-night text-white">
-      <div className="mx-auto grid max-w-6xl lg:grid-cols-12 lg:gap-10 lg:px-6 lg:py-16">
-        <div className="relative h-[58vh] min-h-[380px] lg:order-2 lg:col-span-6 lg:h-[640px] lg:overflow-hidden lg:rounded-[2rem]">
+      <div className="relative h-[58vh] min-h-[380px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-1/2">
+        <div className="rise-in absolute inset-0">
           <Image
             src="/images/pod-night-drive.jpg"
             alt="The Aero pod tissue pod, black with pink roses, on a leather car armrest at night"
             fill
             priority
-            sizes="(min-width: 1024px) 560px, 100vw"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover object-[50%_30%]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-night to-transparent lg:hidden" />
-          {/* Runs bottom-to-top like the wordmark on the can. Decorative, the logo is in the header. */}
-          <p
-            aria-hidden
-            className="wordmark-rise absolute bottom-6 left-3 font-semibold leading-none tracking-tight text-white/95 [writing-mode:vertical-rl] rotate-180 text-[5.5rem] sm:text-[7rem] lg:bottom-8 lg:left-5 lg:text-[9.5rem]"
-          >
-            <span className="text-aero">A</span>ero pod
-          </p>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-night to-transparent lg:inset-y-0 lg:left-0 lg:h-auto lg:w-1/4 lg:bg-gradient-to-r" />
+      </div>
 
-        <div className="relative px-4 pb-12 pt-2 sm:px-6 lg:order-1 lg:col-span-6 lg:flex lg:flex-col lg:justify-center lg:px-0 lg:py-0">
+      <div className="mx-auto max-w-6xl lg:flex lg:min-h-[680px] lg:items-center lg:px-6">
+        <div className="relative px-4 pb-12 pt-2 sm:px-6 lg:w-1/2 lg:px-0 lg:py-20 lg:pr-12">
           <h1 className="text-display font-semibold">{store.tagline}</h1>
           <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-white/80">
             A rose-scented tissue pod made for your car&apos;s cup holder. Soft tissues within reach, and a cabin that

@@ -31,7 +31,7 @@ export const faqs = [
   },
   {
     q: "Why is 3 pods the recommended pack?",
-    a: "Most people keep one in the car, one at home and one on the office desk. Three pods also ship free, which brings each pod under ₹100.",
+    a: "Most people keep one in the car, one at home and one on the office desk. Three pods also ship free, which brings each pod to about ₹100 instead of ₹130 plus delivery.",
   },
 ];
 

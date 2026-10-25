@@ -49,8 +49,8 @@ dialog::backdrop {
   backdrop-filter: blur(2px);
 }
 
-/* The one orchestrated moment: the vertical wordmark draws up the hero the
-   way it runs up the side of the can. */
+/* The one orchestrated moment: the hero photo rises into view the way a
+   tissue is drawn up out of the pod. */
 @keyframes rise {
   from {
     clip-path: inset(100% 0 0 0);
@@ -59,15 +59,15 @@ dialog::backdrop {
     clip-path: inset(0 0 0 0);
   }
 }
-.wordmark-rise {
-  animation: rise 1.1s cubic-bezier(0.2, 0.7, 0.1, 1) 0.15s both;
+.rise-in {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .wordmark-rise {
+  .rise-in {
     animation: none;
   }
 }

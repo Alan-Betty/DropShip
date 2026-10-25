@@ -130,7 +130,7 @@ function Dashboard({ orders }: { orders: Order[] }) {
                 {o.customer.landmark && `, ${o.customer.landmark}`}, {o.customer.city}, {o.customer.state}{" "}
                 {o.customer.pincode}
               </p>
-              <form action={saveOrder} className="mt-4 flex flex-wrap items-end gap-3 border-t border-mist pt-4 text-sm">
+              <form key={o.updatedAt} action={saveOrder} className="mt-4 flex flex-wrap items-end gap-3 border-t border-mist pt-4 text-sm">
                 <input type="hidden" name="id" value={o.id} />
                 <label className="grid gap-1">
                   <span className="text-ink-soft">Status</span>
