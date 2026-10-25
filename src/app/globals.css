@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Palette lifted from the pod itself: rose petals on near-black foliage, and
+   the red of the "A" in the wordmark, which is kept for buying actions only. */
+@theme {
+  --color-petal: #faf6f7;
+  --color-blush: #f2e6ea;
+  --color-mist: #e6d9de;
+  --color-ink: #1d1a1c;
+  --color-ink-soft: #5c5357;
+  --color-night: #0e1713;
+  --color-leaf: #2f4a3f;
+  --color-rose: #a23a5a;
+  --color-rose-light: #e9b3c2;
+  --color-aero: #d61f2c;
+  --color-aero-deep: #b3151f;
+  --color-ok: #1f7a4d;
+
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: clamp(2.6rem, 6.4vw, 5.25rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+  --text-title: clamp(1.9rem, 3.6vw, 2.9rem);
+  --text-title--line-height: 1.05;
+  --text-title--letter-spacing: -0.025em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-petal);
+  color: var(--color-ink);
+  font-feature-settings: "ss01";
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-rose);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+dialog::backdrop {
+  background: rgb(14 23 19 / 0.6);
+  backdrop-filter: blur(2px);
+}
+
+/* The one orchestrated moment: the vertical wordmark draws up the hero the
+   way it runs up the side of the can. */
+@keyframes rise {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.wordmark-rise {
+  animation: rise 1.1s cubic-bezier(0.2, 0.7, 0.1, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .wordmark-rise {
+    animation: none;
+  }
 }
